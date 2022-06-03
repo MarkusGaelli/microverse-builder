@@ -27,7 +27,7 @@ class OpenRefineryPortalActor {
             depth: 0.05,
             frameColor: 8947848,
             height: 2.4,
-            portalURL: "?world=refinery",
+            portalURL: "croquet.io/microverse/?world=refinery",
             type: "2d",
             width: 1.8,
         });
