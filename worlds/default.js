@@ -10,20 +10,22 @@ export function init(Constants) {
 
     Constants.SystemBehaviorDirectory = "behaviors/croquet";
     Constants.SystemBehaviorModules = [
-        "menu.js", "elected.js", "propertySheet.js", "stickyNote.js", "avatarEvents.js", "pdfview.js"
+        "menu.js", "elected.js", "propertySheet.js", "stickyNote.js", "rapier.js", "avatarEvents.js", "pdfview.js"
     ];
 
     Constants.UserBehaviorDirectory = "behaviors/default";
     Constants.UserBehaviorModules = [
-        "demo.js", "lights.js", "bouncingBall.js", "bitcoinTracker.js", "spin.js", "openPortal.js"
+        "demo.js", "lights.js", "bouncingBall.js", "bitcoinTracker.js", "spin.js", "pendulum.js", "openPortal.js"
     ];
 
     const frameColor = 0x888888;
+    Constants.UseRapier = true;
 
     Constants.DefaultCards = [
         {
             card: {
                 name: "entrance",
+                type: "object",
                 // same position and orientation as in openPortal.js
                 translation: [-12, -0.4, -10.2],
                 rotation: [0, -Math.PI / 2, 0],
@@ -115,7 +117,7 @@ export function init(Constants) {
         {
             card: {
                 name: "bitcointracker",
-                translation: [-5, 0.6, -16],
+                translation: [-5, 0.6, -16.87],
                 rotation: [0, 0, 0],
                 scale: [3, 3, 3],
                 type: "2d",
@@ -163,13 +165,14 @@ export function init(Constants) {
             card: {
                 name: "text editor",
                 className: "TextFieldActor",
-                translation: [5.5, 0.4, -16],
+                translation: [5.5, 0.4, -16.87],
                 rotation: [0, 0, 0],
                 depth: 0.05,
                 type: "text",
                 runs: [{text: "\nWelcome to the Croquet Gallery!\n"}],
                 margins: {left: 20, top: 20, right: 20, bottom: 20},
                 backgroundColor: 0xf4e056,
+                color: 0x00ffff,
                 //color: 0xf4e056,
                 frameColor: frameColor,
                 width: 2,
@@ -261,5 +264,17 @@ width: 1.8,
             }
         }
         */
+        {
+            card: {
+                name:"pendulum",
+                type: "object",
+                translation: [-0.03701975732147922, 3.2368919013826734, 8.444841625884546],
+                behaviorModules: ["Rapier", "Pendulum"],
+                layers: ["pointer"],
+                scale: [0.2, 0.2, 0.2],
+                color: 0xaa6666,
+            }
+        },
+        
     ];
 }

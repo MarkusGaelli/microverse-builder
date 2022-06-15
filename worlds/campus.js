@@ -14,11 +14,16 @@ export function init(Constants) {
 
     Constants.UserBehaviorDirectory = "behaviors/campus";
     Constants.UserBehaviorModules = [
-        "lights.js", "livemap.js", "drive.js", "earth.js", "spin.js", "pendulum.js", "openPortal.js"
+        "lights.js", "livemap.js", "drive.js", "earth.js", "spin.js", "pendulum.js", "openPortal.js", "cascade.js"
     ];
 
     const frameColor = 0x888888;
     Constants.UseRapier = true;
+
+    let cr = [0.47123889803846897, -0.7456756856460655, 0];
+    let cr2 = [0.35123889803846897, -0.7456756856460655, 0];
+
+    let baseSize = [5, 0.3, 5];
 
     Constants.DefaultCards = [
         {
@@ -75,7 +80,9 @@ export function init(Constants) {
                 width: 1.5,
                 height: 3.0,
                 depth: 0.05,
+                backgroundColor: 0xdddddd,
                 frameColor: frameColor,
+                fullBright: true,
             },
         },
         {
@@ -91,7 +98,9 @@ export function init(Constants) {
                 width: 1.5,
                 height: 1.7,
                 depth: 0.05,
+                backgroundColor: 0xdddddd,
                 frameColor: frameColor,
+                fullBright: true,
             },
         },
         {
@@ -140,7 +149,51 @@ export function init(Constants) {
                 type: "object",
             }
         },
-        
-        
+
+        {
+            card: {
+                name:"base",
+                type: "object",
+                layers: ["pointer", "walk"],
+                rotation: cr,
+                translation: [117.51152685835386, 5.399264662960818, -133.3030737470486],
+                behaviorModules: ["Rapier", "Cascade"],
+                rapierSize: baseSize,
+                color: 0x997777,
+                rapierShape: "cuboid",
+                rapierType: "positionBased",
+                shadow: true,
+            }
+        },
+        {
+            card: {
+                name:"base 2",
+                type: "object",
+                layers: ["pointer", "walk"],
+                translation: [115.10571744346545, 3.6706208296689598, -130.67510326608854],
+                rotation: cr2,
+                behaviorModules: ["Rapier", "Cascade"],
+                rapierSize: [5, 0.3, 2],
+                color: 0x997777,
+                rapierShape: "cuboid",
+                rapierType: "positionBased",
+                shadow: true,
+            }
+        },
+
+        {
+            card: {
+                name:"spray",
+                type: "object",
+                layers: ["pointer"],
+                translation: [117.51152685835386, 7.399264662960818, -133.3030737470486],
+                behaviorModules: ["Spray"],
+                rapierSize: [0.2, 0.2, 0.2],
+                rapierShape: "cuboid",
+                rapierType: "positionBased",
+                color: 0xcccccc,
+                shadow: true,
+            }
+        },
     ];
 }
