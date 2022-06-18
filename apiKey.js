@@ -1,4 +1,4 @@
 /* Copy this into a file named apiKey.js */
-const apiKey = '1eBC2qdrgpJKcz3z4L4nlcxJ0gvnblD2vGsNybbGs';
-const appId = 'com.gmail.markus.gaelli.microverse';
+const apiKey = '14yj9Nx1i9yDoorPOntlnaGa9pHDjOr82KDD7Kn71';
+const appId = 'com.gmail.gaelli.markus.microverse';
 export default {apiKey, appId};
